@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std
+void add(int n1, int n2)
+{
+cout<<"Addition of "<<n1<<" & "<<n2<<" = "<<n1+n2<<endl;
+}
+void sub(int n1, int n2)
+{
+cout<<"Subtraction of "<<n1<<" & "<<n2<<" "<<n1-n2 <<endl;
+}
+void multi(int n1, int n2)
+{
+cout<<"Multiplication of "<<n1<<" & "<<n2<<" = "<<n1 n2 endl;
+}
+void divi(int n1,int n2)
+{
+cout<<"Division of "<<n1<<" & "<<n2<<" = "<<n1/n2<<endl;
+}
+int main()
+
+{
+int n1, n2;
+char op;
+cout<<"Enter two numbers: ";
+cin>>n>>n2;
+cout<<"Enter operator: ";
+cin>>op;
+
+if(op=='+')
+
+{
+add(n1, n2);
+} else if(op=='-')
+{
+sub(n1, n2);
+}
+else if(op=='*')
+{
+multi(n1, n2);
+}
+else
+{
+divi(n1, n2);
+}
+return 0;
+}

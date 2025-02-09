@@ -1,0 +1,230 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <ctime>
+using namespace std;
+struct Book {
+int id;
+string title;
+string author;
+string ISBN;
+bool isAvailable;
+time_t dueDate;
+};
+struct Borrower {
+int id;
+string name;
+class Library {
+private:
+vector<Book> books;
+vector Borrower> borrowers;
+int finePerDay = 10;
+public:
+void addBook (Book book) {
+books.push_back(book);
+}
+void addBorrower (Borrower borrower) {
+borrowers.push_back(borrower);
+}
+void searchBook(string query) {
+for (Book book: books) (
+if (book.title.find(query) != string::npos
+||book.author.find(query)!=string::npos || book.ISBN == query) {
+cout << "Book found: <<<< book.title<<<<<<
+by book.author << endl;
+}
+}
+}
+void checkoutBook (int bookId, int borrowerId) {
+
+for (Book book books) {
+
+if (book.id book Id & book.isAvailable) {
+
+book.isAvailable false;
+
+book.dueDate= (8)+7 24 60 68;
+
+cout << "Book checked out by borrower ID: "<<< borrowerId <<< endl;
+
+return;
+
+}
+
+}
+
+cout << "Book is not available"<<<< endl;
+
+}
+void returnBook (int bookId) {
+
+for (Books book books) {
+
+if (book.id bookId 88 book.isAvailable) {
+
+book.isAvailable = true;
+
+time t now tim (8);
+
+int overdueDays = (now book.dueDate) / (2460 бе);
+
+if (overdueDays 8) {
+
+cout << "Book is overdue. Fine: $" << overdueDays finePerDay<<<< endl;
+
+} else {
+
+cout << "Book returned on time" << endl;
+
+} return;
+
+}
+
+} cout << "Book was not checked out" << endl;
+
+}
+
+void userInterface() {
+
+int choice;
+
+do {
+
+cout << "Library Management System" << endl;
+
+cout << "1. Add Book" << endl;
+
+cout << "2. Add Borrower" << endl;
+
+cout << "3. Search Book" << endl;
+
+cout << "4. Checkout Book" << endl;
+
+cout << "5. Return Book" << endl;
+
+cout << "6. Exit" << endl;
+
+cout << "Enter your choice: ";
+
+cin >> choice;
+
+switch (choice) {
+case 1: {
+
+Book book;
+
+cout << "Enter book ID: ";
+
+cin>> book.id;
+
+cout << "Enter title: ";
+
+cin.ignore();
+
+getline(cin, book.title); cout << "Enter author: ";
+
+getline(cin, book.author);
+
+cout << "Enter ISBN: ";
+
+getline(cin, book. ISBN);
+
+book.isAvailable = true;
+
+addBook(book);
+
+break;
+
+}
+
+case 2: {
+
+Borrower borrower;
+
+cout << "Enter borrower ID: ";
+
+cin>> borrower.id;
+
+cout << "Enter name: ";
+
+cin.ignore();
+
+getline(cin, borrower.name);
+
+addBorrower (borrower);
+
+break;
+
+} case 3: {
+
+string query;
+
+cout << "Enter title, author, or ISBN to search: ";
+
+cin.ignore();
+
+getline(cin, query);
+
+searchBook(query);
+
+break;
+}
+case 4: {
+
+int bookId, borrowerId;
+
+cout << "Enter book ID to checkout: ";
+
+cin >> bookId;
+
+cout << "Enter borrower ID: ";
+
+cin>>> borrowerId;
+
+checkoutBook (bookId, borrowerId);
+
+break;
+
+}
+
+case 5: {
+
+int bookId;
+
+cout << "Enter book ID to return:
+
+cin >> bookId;
+
+returnBook (bookId);
+
+break;
+
+}
+
+case 6: {
+
+cout << "Exiting. <<< endl;
+
+break;
+
+}
+
+default:
+
+cout << "Invalid choice" << endl;
+
+break;
+
+} } while (choice 1= 6);
+
+}
+
+};
+
+int main() {
+
+Library library;
+
+library.user Interface();
+
+return 0;

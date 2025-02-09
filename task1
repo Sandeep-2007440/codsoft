@@ -1,0 +1,46 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+srand(time());
+int r;
+r=rand();
+
+while(true)
+{
+int n;
+cout<<"Enter your guess;
+cin>>n;
+
+if(n==r)
+{
+
+cout<<"Your guess is correct"<<endl;
+
+break;
+
+} else if(n>r)
+
+{
+cout<<"Your guess is correct"<<endl;
+
+}
+
+cout<<"Too high"<<endl;
+continue;
+
+else
+
+{
+cout<<"Your guess is correct"<<endl;
+
+}
+
+cout<<"Too low"<<endl;
+continue;
+}
+}
